@@ -19,8 +19,8 @@ export const sidebarItems = (role:string) => {
           icon: <ProfileOutlined />,
           children: [
             {
-              label: <Link href={`/${role}/profile`}>Account Profile</Link>,
-              key: `/${role}/profile`,
+              label: <Link href={`/${role}`}>Account Profile</Link>,
+              key: `/${role}`,
             },
             {
               label: <Link href={`/${role}/change-password`}>Change Password</Link>,
@@ -51,45 +51,40 @@ export const sidebarItems = (role:string) => {
             },
           ]
         },
-      ];
-    
-      const adminSidebarItems: MenuProps["items"] = [
-        ...defaultSidebarItems,
-        ...commonAdminSidebarItems,
         {
           label: "Management",
           key: "management",
           icon: <AppstoreOutlined />,
           children: [
             {
-              label: <Link href={`/${role}/bookings`}>Bookings</Link>,
+              label: <Link href={`/${role}/management/bookings`}>Bookings</Link>,
               key: `/${role}/bookings`,
             },
             {
-              label: <Link href={`/${role}/bookings`}>Blogs</Link>,
-              key: `/${role}/bookings`,
+              label: <Link href={`/${role}/management/blogs`}>Blogs</Link>,
+              key: `/${role}/blogs`,
             },
             {
-              label: <Link href={`/${role}/bookings`}>FAQs</Link>,
-              key: `/${role}/bookings`,
+              label: <Link href={`/${role}/management/faqs`}>FAQs</Link>,
+              key: `/${role}/faqs`,
             },
           ],
         },
       ];
     
-      const superAdminSidebarItems: MenuProps["items"] = [
+      const adminSidebarItems: MenuProps["items"] = [
         ...defaultSidebarItems,
         ...commonAdminSidebarItems,
+      ];
+    
+      const superAdminSidebarItems: MenuProps["items"] = [
+        ...defaultSidebarItems,
         {
-          label: <Link href={`/${role}/admin`}>Manage Admin</Link>,
+          label: <Link href={`/${role}/manage-admins`}>Manage Admins</Link>,
           icon: <TableOutlined />,
-          key: `/${role}/admin`,
+          key: `/${role}/manage-admins`,
         },
-        {
-          label: <Link href={`/${role}/user`}>Manage User</Link>,
-          icon: <TableOutlined />,
-          key: `/${role}/user`,
-        }
+        ...commonAdminSidebarItems,      
       ];
     
       const userSidebarItems: MenuProps["items"] = [

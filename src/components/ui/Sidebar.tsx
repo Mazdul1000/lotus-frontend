@@ -1,17 +1,11 @@
 "use client"
 
 import { useState } from 'react';
-import {
-    DesktopOutlined,
-    FileOutlined,
-    PieChartOutlined,
-    TeamOutlined,
-    UserOutlined,
-  } from '@ant-design/icons';
 import {  Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import { sidebarItems } from '@/constants/sidebarItems';
 import { USER_ROLE } from '@/constants/role';
+import { getUserInfo } from '@/services/auth.service';
 const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -32,10 +26,10 @@ function getItem(
 
 const Sidebar = () => {
     const [collapsed, setCollapsed] = useState(false);
-
     // user role
-    const role = USER_ROLE.ADMIN;
-    return (
+    const { role } = getUserInfo() as any;
+    console.log(role)
+    return ( 
         <Sider 
         collapsible 
         collapsed={collapsed} 
