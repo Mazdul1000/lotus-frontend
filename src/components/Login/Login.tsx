@@ -7,7 +7,7 @@ import loginImage from "@/assest/login-img.svg";
 import Form from "@/components/Forms/Form";
 import { SubmitHandler } from "react-hook-form";
 import FormInput from "@/components/Forms/FormInput";
-import { useUserLoginMutation } from "@/redux/api/authApi";
+import { useUserLoginMutation } from "@/redux/features/auth/authApi";
 import { getUserInfo, isLoggedIn, storeUserInfo } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
 

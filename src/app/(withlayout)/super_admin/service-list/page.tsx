@@ -1,8 +1,9 @@
+import ServiceTable from "@/components/Service/ServiceTable";
 
 const ServicePageList = () => {
     return (
         <div>
-            <h1>Service List Page</h1>
+            <ServiceTable />
         </div>
     );
 };
